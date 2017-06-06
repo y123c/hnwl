@@ -12,6 +12,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use common\models\Product;
 
 /**
  * Site controller
@@ -73,7 +74,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $products = Product::find()->where(['status'=>10])->all();
+        
+        return $this->render('index',[
+            'products'=>$products
+        ]);
     }
 
     /**

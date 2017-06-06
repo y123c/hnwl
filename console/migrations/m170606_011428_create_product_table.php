@@ -16,8 +16,7 @@ class m170606_011428_create_product_table extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string(100)->notNull(),
             'cover' => $this->string(),
-            'price' => $this->decimal(10,2)->defaultValue(0),
-            'desc' => $this->string(),
+            'desc' => $this->text(),
             'status' => $this->smallInteger()->defaultValue(0),
             'created_at' => $this->integer(),
             'updated_at' => $this->integer()

@@ -118,3 +118,19 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+
+.file-thumbnail-footer{
+	height:auto !important;
+}
+.file-footer-caption{
+	display:none !important;
+}
+.file-upload-indicator{
+	display:none !important;
+}
+.krajee-default .file-actions {
+    margin-top: 0px;
+}
+
+.container{width:100%;}

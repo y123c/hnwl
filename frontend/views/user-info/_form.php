@@ -15,9 +15,9 @@ DateTimePickerAsset::register($this);
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'full_name')->textInput(['maxlength' => true, 'style'=>'width:20%;']) ?>
-
     <?= $form->field($model, 'company')->textInput(['maxlength' => true,'style'=>'width:50%;']) ?>
+
+    <?= $form->field($model, 'full_name')->textInput(['maxlength' => true, 'style'=>'width:20%;']) ?>
 
     <?= $form->field($model, 'profession')->textInput(['maxlength' => true, 'style'=>'width:20%;']) ?>
 
