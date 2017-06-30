@@ -3,8 +3,7 @@ namespace backend\models;
 
 use Yii;
 use yii\base\Model;
-use common\models\AdminUser;
-
+use backend\models\UserBackend as User;
 /**
  * Login form
  */
@@ -13,7 +12,7 @@ class LoginForm extends Model
     public $username;
     public $password;
     public $rememberMe = true;
-
+    public $verifyCode;
     private $_user;
 
 
@@ -27,6 +26,8 @@ class LoginForm extends Model
             [['username', 'password'], 'required'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
+            ['verifyCode', 'required'],
+            ['verifyCode', 'captcha'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
         ];
@@ -41,6 +42,7 @@ class LoginForm extends Model
             'username' => '账号',
             'password' => '密码',
             'rememberMe' => '自动登录',
+            'verifyCode' =>'验证码',
         ];
     }
 
@@ -83,7 +85,7 @@ class LoginForm extends Model
     protected function getUser()
     {
         if ($this->_user === null) {
-            $this->_user = AdminUser::findByUsername($this->username);
+            $this->_user = UserBackend::findByUsername($this->username);
         }
 
         return $this->_user;

@@ -16,13 +16,4 @@ $this->title = '汉诺威力商城';
     </div>
 </div>
 
-<div class="product-list">
-	<?php $i=1; foreach ($products as $p) {?>
-	<div class="box<?php if ($i%4!=0)echo ' mr';?>">
-		<div class="cover"><a href="<?php echo Url::toRoute(['product/detail', 'id'=>$p->id])?>"><img src="<?php echo \Yii::getAlias('@web').UtilHelper::getThumb($p->cover)?>" /></a></div>
-		<div class="name"><a href="<?php echo Url::toRoute(['product/detail', 'id'=>$p->id])?>"><?php echo Html::encode($p->name);?></a></div>
-	</div>
-	<?php $i++;}?>
-	
-	<div class="clear"></div>
 </div>
